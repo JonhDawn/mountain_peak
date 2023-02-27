@@ -7,11 +7,11 @@ It is a REST API accessible by 2 endpoints.
 
 ## How to deploy
 Before all, you have to install Docker and docker-compose (cf. https://docs.docker.com/get-docker/).
-Then 4 commands are required to deploy this project:
-- ``docker-compose run django_peak_api sh -c "python manage.py makemigrations"``
-- ``docker-compose run django_peak_api sh -c "python manage.py migrate"``
-- ``docker-compose build``
-- ``docker-compose up``
+Then 4 commands are required to deploy this project (with Windows, remove the prefix 'sudo'):
+- ``sudo docker-compose run django_peak_api sh -c "python manage.py makemigrations"``
+- ``sudo docker-compose run django_peak_api sh -c "python manage.py migrate"``
+- ``sudo docker-compose build``
+- ``sudo docker-compose up``
 
 ## How to use
 There are 5 JSON object formats:
