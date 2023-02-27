@@ -1,37 +1,37 @@
+import sys
+
 import requests
 
-
-BASE_URL = 'http://127.0.0.1:8000'
+ipaddress = sys.argv[1]
+BASE_URL = f'http://{ipaddress}:8000'
 
 
 def create_peak(name: str, lat: float, lon: float, altitude: float) -> dict:
     data = {'name': name, 'lat': lat, 'lon': lon, 'altitude': altitude}
     request = requests.post(f'{BASE_URL}/peak/', data=data)
-    breakpoint()
-    return request.json()
+    return request.json() if request.ok else {}
 
 
 def upload_peak(name: str, lat: float, lon: float, altitude: float) -> dict:
     data = {'name': name, 'lat': lat, 'lon': lon, 'altitude': altitude}
     request = requests.put(f'{BASE_URL}/peak/', data=data)
-    return request.json()
+    return request.json() if request.ok else {}
 
 
 def read_peak(name: str) -> dict:
     request = requests.get(f'{BASE_URL}/peak/?name={name}')
-    return request.json()
+    return request.json() if request.ok else {}
 
 
 def delete_peak(name: str) -> dict:
     data = {'name': name}
     request = requests.delete(f'{BASE_URL}/peak/', data=data)
-    return request.json()
+    return request.json() if request.ok else {}
 
 
 def get_peaks_in_box(lat_ne: float, lat_sw: float, lon_ne: float, lon_sw: float) -> dict:
-    data = {'lat_ne': lat_ne, 'lat_sw': lat_sw, 'lon_ne': lon_ne, 'lon_sw': lon_sw}
-    request = requests.get(f'{BASE_URL}/zone/', data=data)
-    return request.json()
+    request = requests.get(f'{BASE_URL}/zone/?lat_ne={lat_ne}&lat_sw={lat_sw}&lon_ne={lon_ne}&lon_sw={lon_sw}')
+    return request.json() if request.ok else {}
 
 
 if __name__ == '__main__':

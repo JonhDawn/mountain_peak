@@ -77,5 +77,6 @@ This box is a rectangle on the map which can be described by its 4 vertices.
 
 <br>
 You can send requests with the client I implemented in client/main.py (in another terminal) by running the command 
-``python client/main.py`` (if python is installed).
-Of course, any other method to send a request (like the linux command line curl) should work.
+``python client/main.py localhost_ipaddress`` where localhost_ipaddress is your localhost ip address (127.0.0.1 for Windows and 0.0.0.0 otherwise)
+<br><b>Warning</b>: you must install python and the requests module if you use this solution.
+<br>Of course, any other method to send a request (like the linux command line curl) should work.
