@@ -36,7 +36,7 @@ There are 5 JSON object formats:
 <br>
 
 There are 2 endpoints:
-- ``http://127.0.0.1:8000/zone`` which can be accessed with a GET request.
+- ``http://localhost:8000/zone`` which can be accessed with a GET request.
 <br>It returns a list of the peaks in a given geographical bounding box (the peaks are in the POST format). 
 This box is a rectangle on the map which can be described by its 4 vertices.
 <br>It requires 4 parameters in the zone format:
@@ -44,7 +44,7 @@ This box is a rectangle on the map which can be described by its 4 vertices.
   - lat_sw: latitude of the vertex at the southwest of all the peaks in the box,
   - lon_ne: longitude of the vertex at the northeast of all the peaks in the box,
   - lat_sw: longitude of the vertex at the southwest of all the peaks in the box.
-- ``http://127.0.0.1:8000/peak`` which can be accessed with 4 methods:
+- ``http://localhost:8000/peak`` which can be accessed with 4 methods:
   - get: 
     - Required: GET request in GET format
     - Returned:
@@ -77,6 +77,7 @@ This box is a rectangle on the map which can be described by its 4 vertices.
 
 <br>
 You can send requests with the client I implemented in client/main.py (in another terminal) by running the command 
-``python client/main.py localhost_ipaddress`` where localhost_ipaddress is your localhost ip address (127.0.0.1 for Windows and 0.0.0.0 otherwise)
+``python client/main.py localhost_ipaddress`` where localhost_ipaddress is your localhost ip address 
+(127.0.0.1 for Windows and 0.0.0.0 otherwise)
 <br><b>Warning</b>: you must install python and the requests module if you use this solution.
 <br>Of course, any other method to send a request (like the linux command line curl) should work.
